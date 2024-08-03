@@ -1,7 +1,7 @@
 # Example of Golang CRUD using MySQL from scratch
 
 # Zontroy Code Generator
-Zontroy Code Generator is used to add code generation templates to the project. By minimizing the parts prone to code repetition with Zontroy code generator, I reduced the complexity of the project and made it more user-friendly. I generated code using zsif, zref and ziref file types. When I wanted to produce more than one repeated folder, I used the ziref file type by taking entities from the mssql database. I used zsif to prevent code repetition in the same file, and zref to create different files suitable for code repetition. For more information you can visit https://zontroy.com/. This repository show how to do database CRUD (create, read, update, delete) operations using Golang and MySQL. We are going to create an interface as databse frontend to handle these operations
+Zontroy Code Generator is used to add code generation templates to the project. By minimizing the parts prone to code repetition with Zontroy code generator, I reduced the complexity of the project and made it more user-friendly. I generated code using zsif, zref and ziref file types. When I wanted to produce more than one repeated folder, I used the ziref file type by taking entities from the mssql database. I used zsif to prevent code repetition in the same file, and zref to create different files suitable for code repetition. For more information you can visit https://zontroy.com/. 
 
 ## Install app
 
