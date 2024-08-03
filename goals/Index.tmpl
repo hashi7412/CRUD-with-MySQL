@@ -1,0 +1,59 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered goals </h2>
+  
+    <table border="1">
+      <thead>
+      <tr>
+        
+        <td>GoalID</td>
+        
+        <td>UserID</td>
+        
+        <td>GoalTitle</td>
+        
+        <td>GoalDescription</td>
+        
+        <td>GoalDeadline</td>
+        
+        <td>IsAchieved</td>
+        
+        <td>CreatedAt</td>
+        
+        <td>UpdatedAt</td>
+        
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        
+        <td>{{ .GoalID }}</td>
+        
+        <td>{{ .UserID }}</td>
+        
+        <td>{{ .GoalTitle }}</td>
+        
+        <td>{{ .GoalDescription }}</td>
+        
+        <td>{{ .GoalDeadline }}</td>
+        
+        <td>{{ .IsAchieved }}</td>
+        
+        <td>{{ .CreatedAt }}</td>
+        
+        <td>{{ .UpdatedAt }}</td>
+        
+        <td><a href="/showgoals?id={{ .GoalID }}" class="btn btn-primary">View</a></td>
+        <td><a href="/editgoals?id={{ .GoalID }}" class="btn btn-secondary">Edit</a></td>
+        <td><a href="/deletegoals?id={{ .GoalID }}" class="btn btn-danger">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

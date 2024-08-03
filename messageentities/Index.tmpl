@@ -1,0 +1,43 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered messageentities </h2>
+  
+    <table border="1">
+      <thead>
+      <tr>
+        
+        <td>MessageEntityID</td>
+        
+        <td>MessageID</td>
+        
+        <td>EntityID</td>
+        
+        <td>EntityValue</td>
+        
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        
+        <td>{{ .MessageEntityID }}</td>
+        
+        <td>{{ .MessageID }}</td>
+        
+        <td>{{ .EntityID }}</td>
+        
+        <td>{{ .EntityValue }}</td>
+        
+        <td><a href="/showmessageentities?id={{ .MessageEntityID }}" class="btn btn-primary">View</a></td>
+        <td><a href="/editmessageentities?id={{ .MessageEntityID }}" class="btn btn-secondary">Edit</a></td>
+        <td><a href="/deletemessageentities?id={{ .MessageEntityID }}" class="btn btn-danger">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

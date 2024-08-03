@@ -1,0 +1,12 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .zg-upperFirstCase(((zg-entity...zg-pkField...zg-name))) }} </h2>
+       
+     zg-for(((zg-item:::[[[zg-entity...zg-nonPKFields]]]))){{{
+     <p>zg-upperFirstCase(((zg-item...zg-name))): {{ .zg-upperFirstCase(((zg-item...zg-name))) }}</p>
+     }}}
+    <br />
+      <p><a href="/edit[[[zg-entity...zg-name]]]?id={{ .zg-upperFirstCase(((zg-entity...zg-pkField...zg-name))) }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

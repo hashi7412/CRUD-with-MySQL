@@ -1,0 +1,23 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>New entity fields</h2>  
+    <form method="POST" action="insertconversations">
+       
+      
+     
+      <label>UserID </label><input type="text" name="UserID" /><br />
+      
+      
+      <label> StartTime </label><input type="datetime-local" name="StartTime" /><br />
+     
+      
+      
+      <label> EndTime </label><input type="datetime-local" name="EndTime" /><br />
+     
+      
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form>
+  {{ template "Footer" }}
+{{ end }}

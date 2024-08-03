@@ -1,0 +1,31 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Edit Entity fields</h2>  
+    <form method="POST" action="updateuserpreferences">
+      <input type="hidden" name="uPreferenceID" value="{{ .PreferenceID }}" />
+        
+     
+     
+      <label>UserID </label><input type="text" name="UserID" value="{{ .UserID}}"  /><br />
+        
+     
+     
+      <label>PreferenceKey </label><input type="text" name="PreferenceKey" value="{{ .PreferenceKey}}"  /><br />
+        
+     
+     
+      <label>PreferenceValue </label><input type="text" name="PreferenceValue" value="{{ .PreferenceValue}}"  /><br />
+        
+     
+      <label> CreatedAt </label><input type="datetime-local" name="CreatedAt" value="{{ .CreatedAt}}"  /><br />
+     
+        
+     
+      <label> UpdatedAt </label><input type="datetime-local" name="UpdatedAt" value="{{ .UpdatedAt}}"  /><br />
+     
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

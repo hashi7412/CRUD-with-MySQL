@@ -1,0 +1,19 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>New entity fields</h2>  
+    <form method="POST" action="insertintententities">
+       
+      
+     
+      <label>IntentID </label><input type="text" name="IntentID" /><br />
+      
+      
+     
+      <label>EntityID </label><input type="text" name="EntityID" /><br />
+      
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form>
+  {{ template "Footer" }}
+{{ end }}

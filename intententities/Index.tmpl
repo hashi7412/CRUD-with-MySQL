@@ -1,0 +1,39 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered intententities </h2>
+  
+    <table border="1">
+      <thead>
+      <tr>
+        
+        <td>IntentEntityID</td>
+        
+        <td>IntentID</td>
+        
+        <td>EntityID</td>
+        
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        
+        <td>{{ .IntentEntityID }}</td>
+        
+        <td>{{ .IntentID }}</td>
+        
+        <td>{{ .EntityID }}</td>
+        
+        <td><a href="/showintententities?id={{ .IntentEntityID }}" class="btn btn-primary">View</a></td>
+        <td><a href="/editintententities?id={{ .IntentEntityID }}" class="btn btn-secondary">Edit</a></td>
+        <td><a href="/deleteintententities?id={{ .IntentEntityID }}" class="btn btn-danger">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

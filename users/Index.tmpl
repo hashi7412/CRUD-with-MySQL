@@ -1,0 +1,91 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered users </h2>
+  
+    <table border="1">
+      <thead>
+      <tr>
+        
+        <td>UserID</td>
+        
+        <td>UserName</td>
+        
+        <td>UserEmail</td>
+        
+        <td>UserPassword</td>
+        
+        <td>UserRole</td>
+        
+        <td>CreatedAt</td>
+        
+        <td>UpdatedAt</td>
+        
+        <td>Name</td>
+        
+        <td>Email</td>
+        
+        <td>Username</td>
+        
+        <td>Password</td>
+        
+        <td>USER</td>
+        
+        <td>CURRENT_CONNECTIONS</td>
+        
+        <td>TOTAL_CONNECTIONS</td>
+        
+        <td>MAX_SESSION_CONTROLLED_MEMORY</td>
+        
+        <td>MAX_SESSION_TOTAL_MEMORY</td>
+        
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        
+        <td>{{ .UserID }}</td>
+        
+        <td>{{ .UserName }}</td>
+        
+        <td>{{ .UserEmail }}</td>
+        
+        <td>{{ .UserPassword }}</td>
+        
+        <td>{{ .UserRole }}</td>
+        
+        <td>{{ .CreatedAt }}</td>
+        
+        <td>{{ .UpdatedAt }}</td>
+        
+        <td>{{ .Name }}</td>
+        
+        <td>{{ .Email }}</td>
+        
+        <td>{{ .Username }}</td>
+        
+        <td>{{ .Password }}</td>
+        
+        <td>{{ .USER }}</td>
+        
+        <td>{{ .CURRENT_CONNECTIONS }}</td>
+        
+        <td>{{ .TOTAL_CONNECTIONS }}</td>
+        
+        <td>{{ .MAX_SESSION_CONTROLLED_MEMORY }}</td>
+        
+        <td>{{ .MAX_SESSION_TOTAL_MEMORY }}</td>
+        
+        <td><a href="/showusers?id={{ .UserID }}" class="btn btn-primary">View</a></td>
+        <td><a href="/editusers?id={{ .UserID }}" class="btn btn-secondary">Edit</a></td>
+        <td><a href="/deleteusers?id={{ .UserID }}" class="btn btn-danger">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

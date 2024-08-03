@@ -1,0 +1,20 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .PreferenceID }} </h2>
+       
+     
+     <p>UserID: {{ .UserID }}</p>
+     
+     <p>PreferenceKey: {{ .PreferenceKey }}</p>
+     
+     <p>PreferenceValue: {{ .PreferenceValue }}</p>
+     
+     <p>CreatedAt: {{ .CreatedAt }}</p>
+     
+     <p>UpdatedAt: {{ .UpdatedAt }}</p>
+     
+    <br />
+      <p><a href="/edituserpreferences?id={{ .PreferenceID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

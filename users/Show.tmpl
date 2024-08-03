@@ -1,0 +1,40 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .UserID }} </h2>
+       
+     
+     <p>UserName: {{ .UserName }}</p>
+     
+     <p>UserEmail: {{ .UserEmail }}</p>
+     
+     <p>UserPassword: {{ .UserPassword }}</p>
+     
+     <p>UserRole: {{ .UserRole }}</p>
+     
+     <p>CreatedAt: {{ .CreatedAt }}</p>
+     
+     <p>UpdatedAt: {{ .UpdatedAt }}</p>
+     
+     <p>Name: {{ .Name }}</p>
+     
+     <p>Email: {{ .Email }}</p>
+     
+     <p>Username: {{ .Username }}</p>
+     
+     <p>Password: {{ .Password }}</p>
+     
+     <p>USER: {{ .USER }}</p>
+     
+     <p>CURRENT_CONNECTIONS: {{ .CURRENT_CONNECTIONS }}</p>
+     
+     <p>TOTAL_CONNECTIONS: {{ .TOTAL_CONNECTIONS }}</p>
+     
+     <p>MAX_SESSION_CONTROLLED_MEMORY: {{ .MAX_SESSION_CONTROLLED_MEMORY }}</p>
+     
+     <p>MAX_SESSION_TOTAL_MEMORY: {{ .MAX_SESSION_TOTAL_MEMORY }}</p>
+     
+    <br />
+      <p><a href="/editusers?id={{ .UserID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

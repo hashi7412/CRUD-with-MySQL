@@ -1,0 +1,31 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>New entity fields</h2>  
+    <form method="POST" action="insertachievements">
+       
+      
+     
+      <label>UserID </label><input type="text" name="UserID" /><br />
+      
+      
+     
+      <label>AchievementTitle </label><input type="text" name="AchievementTitle" /><br />
+      
+      
+     
+      <label>AchievementDetails </label><input type="text" name="AchievementDetails" /><br />
+      
+      
+      <label> AchievementDate </label><input type="datetime-local" name="AchievementDate" /><br />
+     
+      
+      
+      <label> CreatedAt </label><input type="datetime-local" name="CreatedAt" /><br />
+     
+      
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form>
+  {{ template "Footer" }}
+{{ end }}

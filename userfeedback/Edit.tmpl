@@ -1,0 +1,27 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Edit Entity fields</h2>  
+    <form method="POST" action="updateuserfeedback">
+      <input type="hidden" name="uFeedbackID" value="{{ .FeedbackID }}" />
+        
+     
+     
+      <label>UserID </label><input type="text" name="UserID" value="{{ .UserID}}"  /><br />
+        
+     
+     
+      <label>FeedbackText </label><input type="text" name="FeedbackText" value="{{ .FeedbackText}}"  /><br />
+        
+     
+     
+      <label>FeedbackRating </label><input type="text" name="FeedbackRating" value="{{ .FeedbackRating}}"  /><br />
+        
+     
+      <label> CreatedAt </label><input type="datetime-local" name="CreatedAt" value="{{ .CreatedAt}}"  /><br />
+     
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

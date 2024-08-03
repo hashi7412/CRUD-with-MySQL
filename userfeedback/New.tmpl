@@ -1,0 +1,27 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>New entity fields</h2>  
+    <form method="POST" action="insertuserfeedback">
+       
+      
+     
+      <label>UserID </label><input type="text" name="UserID" /><br />
+      
+      
+     
+      <label>FeedbackText </label><input type="text" name="FeedbackText" /><br />
+      
+      
+     
+      <label>FeedbackRating </label><input type="text" name="FeedbackRating" /><br />
+      
+      
+      <label> CreatedAt </label><input type="datetime-local" name="CreatedAt" /><br />
+     
+      
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form>
+  {{ template "Footer" }}
+{{ end }}

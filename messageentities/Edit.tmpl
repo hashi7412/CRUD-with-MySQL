@@ -1,0 +1,23 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Edit Entity fields</h2>  
+    <form method="POST" action="updatemessageentities">
+      <input type="hidden" name="uMessageEntityID" value="{{ .MessageEntityID }}" />
+        
+     
+     
+      <label>MessageID </label><input type="text" name="MessageID" value="{{ .MessageID}}"  /><br />
+        
+     
+     
+      <label>EntityID </label><input type="text" name="EntityID" value="{{ .EntityID}}"  /><br />
+        
+     
+     
+      <label>EntityValue </label><input type="text" name="EntityValue" value="{{ .EntityValue}}"  /><br />
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

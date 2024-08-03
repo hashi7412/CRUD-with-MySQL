@@ -1,0 +1,18 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .LogID }} </h2>
+       
+     
+     <p>UserID: {{ .UserID }}</p>
+     
+     <p>ActionID: {{ .ActionID }}</p>
+     
+     <p>LogDetails: {{ .LogDetails }}</p>
+     
+     <p>LogTimestamp: {{ .LogTimestamp }}</p>
+     
+    <br />
+      <p><a href="/editlogs?id={{ .LogID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

@@ -1,0 +1,18 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .FeedbackID }} </h2>
+       
+     
+     <p>UserID: {{ .UserID }}</p>
+     
+     <p>FeedbackText: {{ .FeedbackText }}</p>
+     
+     <p>FeedbackRating: {{ .FeedbackRating }}</p>
+     
+     <p>CreatedAt: {{ .CreatedAt }}</p>
+     
+    <br />
+      <p><a href="/edituserfeedback?id={{ .FeedbackID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

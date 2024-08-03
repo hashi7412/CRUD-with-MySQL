@@ -1,0 +1,47 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered logs </h2>
+  
+    <table border="1">
+      <thead>
+      <tr>
+        
+        <td>LogID</td>
+        
+        <td>UserID</td>
+        
+        <td>ActionID</td>
+        
+        <td>LogDetails</td>
+        
+        <td>LogTimestamp</td>
+        
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        
+        <td>{{ .LogID }}</td>
+        
+        <td>{{ .UserID }}</td>
+        
+        <td>{{ .ActionID }}</td>
+        
+        <td>{{ .LogDetails }}</td>
+        
+        <td>{{ .LogTimestamp }}</td>
+        
+        <td><a href="/showlogs?id={{ .LogID }}" class="btn btn-primary">View</a></td>
+        <td><a href="/editlogs?id={{ .LogID }}" class="btn btn-secondary">Edit</a></td>
+        <td><a href="/deletelogs?id={{ .LogID }}" class="btn btn-danger">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

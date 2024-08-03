@@ -1,0 +1,22 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .AppointmentID }} </h2>
+       
+     
+     <p>UserID: {{ .UserID }}</p>
+     
+     <p>AppointmentTitle: {{ .AppointmentTitle }}</p>
+     
+     <p>AppointmentDetails: {{ .AppointmentDetails }}</p>
+     
+     <p>AppointmentDate: {{ .AppointmentDate }}</p>
+     
+     <p>CreatedAt: {{ .CreatedAt }}</p>
+     
+     <p>UpdatedAt: {{ .UpdatedAt }}</p>
+     
+    <br />
+      <p><a href="/editappointments?id={{ .AppointmentID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

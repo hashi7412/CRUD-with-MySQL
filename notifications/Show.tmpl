@@ -1,0 +1,20 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .NotificationID }} </h2>
+       
+     
+     <p>UserID: {{ .UserID }}</p>
+     
+     <p>NotificationText: {{ .NotificationText }}</p>
+     
+     <p>NotificationType: {{ .NotificationType }}</p>
+     
+     <p>IsRead: {{ .IsRead }}</p>
+     
+     <p>CreatedAt: {{ .CreatedAt }}</p>
+     
+    <br />
+      <p><a href="/editnotifications?id={{ .NotificationID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

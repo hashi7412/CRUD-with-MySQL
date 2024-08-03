@@ -1,0 +1,27 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>New entity fields</h2>  
+    <form method="POST" action="insertlogs">
+       
+      
+     
+      <label>UserID </label><input type="text" name="UserID" /><br />
+      
+      
+     
+      <label>ActionID </label><input type="text" name="ActionID" /><br />
+      
+      
+     
+      <label>LogDetails </label><input type="text" name="LogDetails" /><br />
+      
+      
+      <label> LogTimestamp </label><input type="datetime-local" name="LogTimestamp" /><br />
+     
+      
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form>
+  {{ template "Footer" }}
+{{ end }}

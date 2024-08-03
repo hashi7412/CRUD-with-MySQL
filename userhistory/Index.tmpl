@@ -1,0 +1,43 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered userhistory </h2>
+  
+    <table border="1">
+      <thead>
+      <tr>
+        
+        <td>HistoryID</td>
+        
+        <td>UserID</td>
+        
+        <td>HistoryData</td>
+        
+        <td>CreatedAt</td>
+        
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        
+        <td>{{ .HistoryID }}</td>
+        
+        <td>{{ .UserID }}</td>
+        
+        <td>{{ .HistoryData }}</td>
+        
+        <td>{{ .CreatedAt }}</td>
+        
+        <td><a href="/showuserhistory?id={{ .HistoryID }}" class="btn btn-primary">View</a></td>
+        <td><a href="/edituserhistory?id={{ .HistoryID }}" class="btn btn-secondary">Edit</a></td>
+        <td><a href="/deleteuserhistory?id={{ .HistoryID }}" class="btn btn-danger">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

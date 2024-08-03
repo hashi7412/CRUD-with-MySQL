@@ -1,0 +1,22 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .ReminderID }} </h2>
+       
+     
+     <p>UserID: {{ .UserID }}</p>
+     
+     <p>ReminderText: {{ .ReminderText }}</p>
+     
+     <p>ReminderTime: {{ .ReminderTime }}</p>
+     
+     <p>IsCompleted: {{ .IsCompleted }}</p>
+     
+     <p>CreatedAt: {{ .CreatedAt }}</p>
+     
+     <p>UpdatedAt: {{ .UpdatedAt }}</p>
+     
+    <br />
+      <p><a href="/editreminders?id={{ .ReminderID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

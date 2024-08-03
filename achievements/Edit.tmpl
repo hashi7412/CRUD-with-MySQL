@@ -1,0 +1,31 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Edit Entity fields</h2>  
+    <form method="POST" action="updateachievements">
+      <input type="hidden" name="uAchievementID" value="{{ .AchievementID }}" />
+        
+     
+     
+      <label>UserID </label><input type="text" name="UserID" value="{{ .UserID}}"  /><br />
+        
+     
+     
+      <label>AchievementTitle </label><input type="text" name="AchievementTitle" value="{{ .AchievementTitle}}"  /><br />
+        
+     
+     
+      <label>AchievementDetails </label><input type="text" name="AchievementDetails" value="{{ .AchievementDetails}}"  /><br />
+        
+     
+      <label> AchievementDate </label><input type="datetime-local" name="AchievementDate" value="{{ .AchievementDate}}"  /><br />
+     
+        
+     
+      <label> CreatedAt </label><input type="datetime-local" name="CreatedAt" value="{{ .CreatedAt}}"  /><br />
+     
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

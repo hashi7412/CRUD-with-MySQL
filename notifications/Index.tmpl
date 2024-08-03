@@ -1,0 +1,51 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered notifications </h2>
+  
+    <table border="1">
+      <thead>
+      <tr>
+        
+        <td>NotificationID</td>
+        
+        <td>UserID</td>
+        
+        <td>NotificationText</td>
+        
+        <td>NotificationType</td>
+        
+        <td>IsRead</td>
+        
+        <td>CreatedAt</td>
+        
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        
+        <td>{{ .NotificationID }}</td>
+        
+        <td>{{ .UserID }}</td>
+        
+        <td>{{ .NotificationText }}</td>
+        
+        <td>{{ .NotificationType }}</td>
+        
+        <td>{{ .IsRead }}</td>
+        
+        <td>{{ .CreatedAt }}</td>
+        
+        <td><a href="/shownotifications?id={{ .NotificationID }}" class="btn btn-primary">View</a></td>
+        <td><a href="/editnotifications?id={{ .NotificationID }}" class="btn btn-secondary">Edit</a></td>
+        <td><a href="/deletenotifications?id={{ .NotificationID }}" class="btn btn-danger">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

@@ -1,0 +1,31 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Edit Entity fields</h2>  
+    <form method="POST" action="updateactions">
+      <input type="hidden" name="uActionID" value="{{ .ActionID }}" />
+        
+     
+     
+      <label>ActionName </label><input type="text" name="ActionName" value="{{ .ActionName}}"  /><br />
+        
+     
+     
+      <label>ActionType </label><input type="text" name="ActionType" value="{{ .ActionType}}"  /><br />
+        
+     
+     
+      <label>Description </label><input type="text" name="Description" value="{{ .Description}}"  /><br />
+        
+     
+      <label> CreatedAt </label><input type="datetime-local" name="CreatedAt" value="{{ .CreatedAt}}"  /><br />
+     
+        
+     
+      <label> UpdatedAt </label><input type="datetime-local" name="UpdatedAt" value="{{ .UpdatedAt}}"  /><br />
+     
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

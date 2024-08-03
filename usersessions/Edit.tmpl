@@ -1,0 +1,27 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Edit Entity fields</h2>  
+    <form method="POST" action="updateusersessions">
+      <input type="hidden" name="uSessionID" value="{{ .SessionID }}" />
+        
+     
+     
+      <label>UserID </label><input type="text" name="UserID" value="{{ .UserID}}"  /><br />
+        
+     
+     
+      <label>SessionToken </label><input type="text" name="SessionToken" value="{{ .SessionToken}}"  /><br />
+        
+     
+      <label> SessionStart </label><input type="datetime-local" name="SessionStart" value="{{ .SessionStart}}"  /><br />
+     
+        
+     
+      <label> SessionEnd </label><input type="datetime-local" name="SessionEnd" value="{{ .SessionEnd}}"  /><br />
+     
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

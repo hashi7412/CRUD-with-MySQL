@@ -1,0 +1,31 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered [[[zg-entity...zg-name]]] </h2>
+  
+    <table border="1">
+      <thead>
+      <tr>
+        zg-for(((zg-item:::[[[zg-entity...zg-fields]]]))){{{
+        <td>zg-upperFirstCase(((zg-item...zg-name)))</td>
+        }}}
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        zg-for(((zg-item:::[[[zg-entity...zg-fields]]]))){{{
+        <td>{{ .zg-upperFirstCase(((zg-item...zg-name))) }}</td>
+        }}}
+        <td><a href="/show[[[zg-entity...zg-name]]]?id={{ .zg-upperFirstCase(((zg-entity...zg-pkField...zg-name))) }}" class="btn btn-primary">View</a></td>
+        <td><a href="/edit[[[zg-entity...zg-name]]]?id={{ .zg-upperFirstCase(((zg-entity...zg-pkField...zg-name))) }}" class="btn btn-secondary">Edit</a></td>
+        <td><a href="/delete[[[zg-entity...zg-name]]]?id={{ .zg-upperFirstCase(((zg-entity...zg-pkField...zg-name))) }}" class="btn btn-danger">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

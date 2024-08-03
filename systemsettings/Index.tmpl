@@ -1,0 +1,47 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered systemsettings </h2>
+  
+    <table border="1">
+      <thead>
+      <tr>
+        
+        <td>SettingID</td>
+        
+        <td>SettingKey</td>
+        
+        <td>SettingValue</td>
+        
+        <td>CreatedAt</td>
+        
+        <td>UpdatedAt</td>
+        
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        
+        <td>{{ .SettingID }}</td>
+        
+        <td>{{ .SettingKey }}</td>
+        
+        <td>{{ .SettingValue }}</td>
+        
+        <td>{{ .CreatedAt }}</td>
+        
+        <td>{{ .UpdatedAt }}</td>
+        
+        <td><a href="/showsystemsettings?id={{ .SettingID }}" class="btn btn-primary">View</a></td>
+        <td><a href="/editsystemsettings?id={{ .SettingID }}" class="btn btn-secondary">Edit</a></td>
+        <td><a href="/deletesystemsettings?id={{ .SettingID }}" class="btn btn-danger">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

@@ -1,0 +1,27 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Edit Entity fields</h2>  
+    <form method="POST" action="updateknowledgebase">
+      <input type="hidden" name="uKnowledgeID" value="{{ .KnowledgeID }}" />
+        
+     
+     
+      <label>Topic </label><input type="text" name="Topic" value="{{ .Topic}}"  /><br />
+        
+     
+     
+      <label>Content </label><input type="text" name="Content" value="{{ .Content}}"  /><br />
+        
+     
+      <label> CreatedAt </label><input type="datetime-local" name="CreatedAt" value="{{ .CreatedAt}}"  /><br />
+     
+        
+     
+      <label> UpdatedAt </label><input type="datetime-local" name="UpdatedAt" value="{{ .UpdatedAt}}"  /><br />
+     
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

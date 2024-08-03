@@ -1,0 +1,16 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .MessageEntityID }} </h2>
+       
+     
+     <p>MessageID: {{ .MessageID }}</p>
+     
+     <p>EntityID: {{ .EntityID }}</p>
+     
+     <p>EntityValue: {{ .EntityValue }}</p>
+     
+    <br />
+      <p><a href="/editmessageentities?id={{ .MessageEntityID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

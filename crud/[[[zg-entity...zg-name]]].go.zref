@@ -1,0 +1,175 @@
+package crud
+
+import (
+    "log"
+    "net/http"
+    "text/template"
+    
+)
+
+type zg-upperFirstCase(((zg-entity...zg-name))) struct {
+zg-for(((zg-itm:::[[[zg-entity...zg-fields]]]))){{{
+zg-upperFirstCase(((zg-itm...zg-name))) zg-convertToGoDataType(((zg-itm...zg-dataType)))
+}}}
+}
+var tmpl[[[zg-entity...zg-name]]] = template.Must(template.ParseGlob("[[[zg-entity...zg-name]]]/*")) 
+
+func Index[[[zg-entity...zg-name]]](w http.ResponseWriter, r *http.Request) {
+    db := dbConn()
+    selDB, err := db.Query("SELECT * FROM [[[zg-entity...zg-name]]] ORDER BY [[[zg-entity...zg-pkField...zg-name]]] DESC")
+
+    if err != nil {
+        panic(err.Error())
+    }
+
+    emp := zg-upperFirstCase(((zg-entity...zg-name))){}
+    res := []zg-upperFirstCase(((zg-entity...zg-name))){}
+
+    for selDB.Next() {
+        zg-for(((zg-itm1:::[[[zg-entity...zg-fields]]]))){{{
+        var [[[zg-itm1...zg-name]]] zg-convertToGoDataType(((zg-itm1...zg-dataType)))
+        }}}
+
+        err = selDB.Scan(
+        zg-for(((zg-itm2:::[[[zg-entity...zg-fields]]]))){{{&[[[zg-itm2...zg-name]]] zg-notLast(((,)))}}})
+        if err != nil {
+            panic(err.Error())
+        }
+
+       zg-for(((zg-itm3:::[[[zg-entity...zg-fields]]]))){{{
+       emp.zg-upperFirstCase(((zg-itm3...zg-name)))=[[[zg-itm3...zg-name]]]
+       }}}
+
+        res = append(res, emp)
+    }
+
+    tmpl[[[zg-entity...zg-name]]].ExecuteTemplate(w, "Index", res)
+
+    // defer db.Close()
+}
+
+func Show[[[zg-entity...zg-name]]](w http.ResponseWriter, r *http.Request) {
+    db := dbConn()
+    nId := r.URL.Query().Get("id")
+
+    selDB, err := db.Query("SELECT * FROM [[[zg-entity...zg-name]]] WHERE [[[zg-entity...zg-pkField...zg-name]]]=?", nId)
+
+    if err != nil {
+        panic(err.Error())
+    }
+
+    emp := zg-upperFirstCase(((zg-entity...zg-name))){}
+
+    for selDB.Next() {
+       zg-for(((zg-itm1:::[[[zg-entity...zg-fields]]]))){{{
+       var [[[zg-itm1...zg-name]]] zg-convertToGoDataType(((zg-itm1...zg-dataType)))}}}
+
+        err = selDB.Scan(zg-for(((zg-itm2:::[[[zg-entity...zg-fields]]]))){{{&[[[zg-itm2...zg-name]]] zg-notLast(((,)))}}})
+        if err != nil {
+            panic(err.Error())
+        }
+
+       zg-for(((zg-itm3:::[[[zg-entity...zg-fields]]]))){{{
+       emp.zg-upperFirstCase(((zg-itm3...zg-name)))=[[[zg-itm3...zg-name]]]}}}
+    }
+
+    tmpl[[[zg-entity...zg-name]]].ExecuteTemplate(w, "Show", emp)
+    defer db.Close()
+}
+
+func New[[[zg-entity...zg-name]]](w http.ResponseWriter, r *http.Request) {
+    tmpl[[[zg-entity...zg-name]]].ExecuteTemplate(w, "New", nil)
+}
+
+func Edit[[[zg-entity...zg-name]]](w http.ResponseWriter, r *http.Request) {
+    db := dbConn()
+    nId := r.URL.Query().Get("id")
+
+    selDB, err := db.Query("SELECT * FROM [[[zg-entity...zg-name]]] WHERE [[[zg-entity...zg-pkField...zg-name]]]=?", nId)
+
+    if err != nil {
+        panic(err.Error())
+    }
+
+    emp := zg-upperFirstCase(((zg-entity...zg-name))){}
+
+    for selDB.Next() {
+      zg-for(((zg-itm1:::[[[zg-entity...zg-fields]]]))){{{
+      var [[[zg-itm1...zg-name]]] zg-convertToGoDataType(((zg-itm1...zg-dataType)))}}}
+        err = selDB.Scan(
+        zg-for(((zg-itm2:::[[[zg-entity...zg-fields]]]))){{{&[[[zg-itm2...zg-name]]] zg-notLast(((,)))}}})
+        if err != nil {
+            panic(err.Error())
+        }
+
+      zg-for(((zg-itm3:::[[[zg-entity...zg-fields]]]))){{{
+      emp.zg-upperFirstCase(((zg-itm3...zg-name)))=[[[zg-itm3...zg-name]]]}}}
+    }
+
+    tmpl[[[zg-entity...zg-name]]].ExecuteTemplate(w, "Edit", emp)
+    defer db.Close()
+}
+
+func Insert[[[zg-entity...zg-name]]](w http.ResponseWriter, r *http.Request) {
+    db := dbConn()
+
+    if r.Method == "POST" {
+        zg-for(((zg-item4:::[[[zg-entity...zg-nonPKFields]]]))){{{
+        [[[zg-item4...zg-name]]] :=r.FormValue("[[[zg-item4...zg-name]]]")}}}
+        insForm, err := db.Prepare("INSERT INTO [[[zg-entity...zg-name]]](zg-for(((zg-itm5:::[[[zg-entity...zg-nonPKFields]]]))){{{[[[zg-itm5...zg-name]]] zg-notLast(((,)))}}}) VALUE (zg-for(((zg-itm5:::[[[zg-entity...zg-nonPKFields]]]))){{{? zg-notLast(((,)))}}})")
+        
+        if err != nil { 
+            panic(err.Error()) 
+        } 
+        
+        insForm.Exec(
+        zg-for(((zg-itm7:::[[[zg-entity...zg-nonPKFields]]]))){{{[[[zg-itm7...zg-name]]] zg-notLast(((,)))}}})  
+         
+         log.Println("INSERT:zg-for(((zg-itm8:::[[[zg-entity...zg-nonPKFields]]]))){{{zg-upperFirstCase(((zg-itm8...zg-name))):" +[[[zg-itm8...zg-name]]] zg-notLast(((+")))}}})
+       
+    }
+
+    defer db.Close()
+    http.Redirect(w, r, "/[[[zg-entity...zg-name]]]", 301)
+}
+
+func Update[[[zg-entity...zg-name]]](w http.ResponseWriter, r *http.Request) {
+    db := dbConn()
+    if r.Method == "POST" {
+       zg-for(((zg-itr:::[[[zg-entity...zg-nonPKFields]]]))){{{
+       [[[zg-itr...zg-name]]]:=r.FormValue("[[[zg-itr...zg-name]]]")}}}
+       [[[zg-entity...zg-pkField...zg-name]]]:=r.FormValue("u[[[zg-entity...zg-pkField...zg-name]]]")
+       
+       insForm, err :=db.Prepare("UPDATE [[[zg-entity...zg-name]]] SET zg-for(((zg-itr5:::[[[zg-entity...zg-nonPKFields]]]))){{{[[[zg-itr5...zg-name]]]=? zg-notLast(((,)))}}} WHERE [[[zg-entity...zg-pkField...zg-name]]]=?")
+       
+       
+        if err != nil {
+            panic(err.Error())
+        }
+
+        insForm.Exec(
+        zg-for(((zg-itr:::[[[zg-entity...zg-nonPKFields]]]))){{{[[[zg-itr...zg-name]]] zg-notLast(((,)))}}},[[[zg-entity...zg-pkField...zg-name]]])
+        log.Println("UPDATE:zg-for(((zg-itm8:::[[[zg-entity...zg-nonPKFields]]]))){{{zg-upperFirstCase(((zg-itm8...zg-name))): " + [[[zg-itm8...zg-name]]] zg-notLast(((+ ")))}}},[[[zg-entity...zg-pkField...zg-name]]])
+        
+    }
+
+    defer db.Close()
+    http.Redirect(w, r, "/[[[zg-entity...zg-name]]]", 301)
+}
+
+func Delete[[[zg-entity...zg-name]]](w http.ResponseWriter, r *http.Request) {
+    db := dbConn()
+    emp := r.URL.Query().Get("id")
+
+    delForm, err := db.Prepare("DELETE FROM [[[zg-entity...zg-name]]] WHERE [[[zg-entity...zg-pkField...zg-name]]]=?")
+
+    if err != nil {
+        panic(err.Error())
+    }
+
+    delForm.Exec(emp)
+    log.Println("DELETE")
+
+    defer db.Close()
+    http.Redirect(w, r, "/[[[zg-entity...zg-name]]]", 301)
+}
