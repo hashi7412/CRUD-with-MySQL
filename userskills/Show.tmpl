@@ -1,0 +1,18 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .UserSkillID }} </h2>
+       
+     
+     <p>UserID: {{ .UserID }}</p>
+     
+     <p>SkillID: {{ .SkillID }}</p>
+     
+     <p>ProficiencyLevel: {{ .ProficiencyLevel }}</p>
+     
+     <p>CreatedAt: {{ .CreatedAt }}</p>
+     
+    <br />
+      <p><a href="/edituserskills?id={{ .UserSkillID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

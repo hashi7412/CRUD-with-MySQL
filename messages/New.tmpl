@@ -1,0 +1,27 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>New entity fields</h2>  
+    <form method="POST" action="insertmessages">
+       
+      
+     
+      <label>ConversationID </label><input type="text" name="ConversationID" /><br />
+      
+      
+     
+      <label>Sender </label><input type="text" name="Sender" /><br />
+      
+      
+     
+      <label>MessageText </label><input type="text" name="MessageText" /><br />
+      
+      
+      <label> MessageTimestamp </label><input type="datetime-local" name="MessageTimestamp" /><br />
+     
+      
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form>
+  {{ template "Footer" }}
+{{ end }}

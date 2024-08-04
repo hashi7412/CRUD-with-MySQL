@@ -1,0 +1,18 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .SettingID }} </h2>
+       
+     
+     <p>SettingKey: {{ .SettingKey }}</p>
+     
+     <p>SettingValue: {{ .SettingValue }}</p>
+     
+     <p>CreatedAt: {{ .CreatedAt }}</p>
+     
+     <p>UpdatedAt: {{ .UpdatedAt }}</p>
+     
+    <br />
+      <p><a href="/editsystemsettings?id={{ .SettingID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

@@ -1,0 +1,71 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>New entity fields</h2>  
+    <form method="POST" action="insertusers">
+       
+      
+     
+      <label>UserName </label><input type="text" name="UserName" /><br />
+      
+      
+     
+      <label>UserEmail </label><input type="text" name="UserEmail" /><br />
+      
+      
+     
+      <label>UserPassword </label><input type="text" name="UserPassword" /><br />
+      
+      
+     
+      <label>UserRole </label><input type="text" name="UserRole" /><br />
+      
+      
+      <label> CreatedAt </label><input type="datetime-local" name="CreatedAt" /><br />
+     
+      
+      
+      <label> UpdatedAt </label><input type="datetime-local" name="UpdatedAt" /><br />
+     
+      
+      
+     
+      <label>Name </label><input type="text" name="name" /><br />
+      
+      
+     
+      <label>Email </label><input type="text" name="email" /><br />
+      
+      
+     
+      <label>Username </label><input type="text" name="username" /><br />
+      
+      
+     
+      <label>Password </label><input type="text" name="password" /><br />
+      
+      
+     
+      <label>USER </label><input type="text" name="USER" /><br />
+      
+      
+     
+      <label>CURRENT_CONNECTIONS </label><input type="text" name="CURRENT_CONNECTIONS" /><br />
+      
+      
+     
+      <label>TOTAL_CONNECTIONS </label><input type="text" name="TOTAL_CONNECTIONS" /><br />
+      
+      
+     
+      <label>MAX_SESSION_CONTROLLED_MEMORY </label><input type="text" name="MAX_SESSION_CONTROLLED_MEMORY" /><br />
+      
+      
+     
+      <label>MAX_SESSION_TOTAL_MEMORY </label><input type="text" name="MAX_SESSION_TOTAL_MEMORY" /><br />
+      
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form>
+  {{ template "Footer" }}
+{{ end }}

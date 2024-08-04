@@ -1,0 +1,43 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered conversations </h2>
+  
+    <table border="1">
+      <thead>
+      <tr>
+        
+        <td>ConversationID</td>
+        
+        <td>UserID</td>
+        
+        <td>StartTime</td>
+        
+        <td>EndTime</td>
+        
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        
+        <td>{{ .ConversationID }}</td>
+        
+        <td>{{ .UserID }}</td>
+        
+        <td>{{ .StartTime }}</td>
+        
+        <td>{{ .EndTime }}</td>
+        
+        <td><a href="/showconversations?id={{ .ConversationID }}" class="btn btn-primary">View</a></td>
+        <td><a href="/editconversations?id={{ .ConversationID }}" class="btn btn-secondary">Edit</a></td>
+        <td><a href="/deleteconversations?id={{ .ConversationID }}" class="btn btn-danger">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

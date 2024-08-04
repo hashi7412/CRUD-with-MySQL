@@ -1,0 +1,27 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Edit Entity fields</h2>  
+    <form method="POST" action="updatelogs">
+      <input type="hidden" name="uLogID" value="{{ .LogID }}" />
+        
+     
+     
+      <label>UserID </label><input type="text" name="UserID" value="{{ .UserID}}"  /><br />
+        
+     
+     
+      <label>ActionID </label><input type="text" name="ActionID" value="{{ .ActionID}}"  /><br />
+        
+     
+     
+      <label>LogDetails </label><input type="text" name="LogDetails" value="{{ .LogDetails}}"  /><br />
+        
+     
+      <label> LogTimestamp </label><input type="datetime-local" name="LogTimestamp" value="{{ .LogTimestamp}}"  /><br />
+     
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

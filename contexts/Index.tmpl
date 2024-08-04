@@ -1,0 +1,47 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered contexts </h2>
+  
+    <table border="1">
+      <thead>
+      <tr>
+        
+        <td>ContextID</td>
+        
+        <td>ContextName</td>
+        
+        <td>Description</td>
+        
+        <td>CreatedAt</td>
+        
+        <td>UpdatedAt</td>
+        
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        
+        <td>{{ .ContextID }}</td>
+        
+        <td>{{ .ContextName }}</td>
+        
+        <td>{{ .Description }}</td>
+        
+        <td>{{ .CreatedAt }}</td>
+        
+        <td>{{ .UpdatedAt }}</td>
+        
+        <td><a href="/showcontexts?id={{ .ContextID }}" class="btn btn-primary">View</a></td>
+        <td><a href="/editcontexts?id={{ .ContextID }}" class="btn btn-secondary">Edit</a></td>
+        <td><a href="/deletecontexts?id={{ .ContextID }}" class="btn btn-danger">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

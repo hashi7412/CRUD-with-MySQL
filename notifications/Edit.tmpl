@@ -1,0 +1,31 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Edit Entity fields</h2>  
+    <form method="POST" action="updatenotifications">
+      <input type="hidden" name="uNotificationID" value="{{ .NotificationID }}" />
+        
+     
+     
+      <label>UserID </label><input type="text" name="UserID" value="{{ .UserID}}"  /><br />
+        
+     
+     
+      <label>NotificationText </label><input type="text" name="NotificationText" value="{{ .NotificationText}}"  /><br />
+        
+     
+     
+      <label>NotificationType </label><input type="text" name="NotificationType" value="{{ .NotificationType}}"  /><br />
+        
+     
+     
+      <label>IsRead </label><input type="text" name="IsRead" value="{{ .IsRead}}"  /><br />
+        
+     
+      <label> CreatedAt </label><input type="datetime-local" name="CreatedAt" value="{{ .CreatedAt}}"  /><br />
+     
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

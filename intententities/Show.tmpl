@@ -1,0 +1,14 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .IntentEntityID }} </h2>
+       
+     
+     <p>IntentID: {{ .IntentID }}</p>
+     
+     <p>EntityID: {{ .EntityID }}</p>
+     
+    <br />
+      <p><a href="/editintententities?id={{ .IntentEntityID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

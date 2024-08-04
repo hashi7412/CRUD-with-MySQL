@@ -1,0 +1,17 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>New entity fields</h2>  
+    <form method="POST" action="insert[[[zg-entity...zg-name]]]">
+       zg-for(((zg-item:::[[[zg-entity...zg-nonPKFields]]]))){{{
+      zg-if(((zg-item...zg-dataType=====zg-toStr(((timestamp)))))){{{
+      <label> zg-upperFirstCase(((zg-item...zg-name))) </label><input type="datetime-local" name="[[[zg-item...zg-name]]]" /><br />
+     }}}
+     zg-if(((zg-item...zg-dataType!====zg-toStr(((timestamp)))))){{{
+      <label>zg-upperFirstCase(((zg-item...zg-name))) </label><input type="text" name="[[[zg-item...zg-name]]]" /><br />
+     }}} }}}
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form>
+  {{ template "Footer" }}
+{{ end }}

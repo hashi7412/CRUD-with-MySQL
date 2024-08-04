@@ -1,0 +1,47 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered userfeedback </h2>
+  
+    <table border="1">
+      <thead>
+      <tr>
+        
+        <td>FeedbackID</td>
+        
+        <td>UserID</td>
+        
+        <td>FeedbackText</td>
+        
+        <td>FeedbackRating</td>
+        
+        <td>CreatedAt</td>
+        
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        
+        <td>{{ .FeedbackID }}</td>
+        
+        <td>{{ .UserID }}</td>
+        
+        <td>{{ .FeedbackText }}</td>
+        
+        <td>{{ .FeedbackRating }}</td>
+        
+        <td>{{ .CreatedAt }}</td>
+        
+        <td><a href="/showuserfeedback?id={{ .FeedbackID }}" class="btn btn-primary">View</a></td>
+        <td><a href="/edituserfeedback?id={{ .FeedbackID }}" class="btn btn-secondary">Edit</a></td>
+        <td><a href="/deleteuserfeedback?id={{ .FeedbackID }}" class="btn btn-danger">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

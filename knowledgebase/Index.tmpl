@@ -1,0 +1,47 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered knowledgebase </h2>
+  
+    <table border="1">
+      <thead>
+      <tr>
+        
+        <td>KnowledgeID</td>
+        
+        <td>Topic</td>
+        
+        <td>Content</td>
+        
+        <td>CreatedAt</td>
+        
+        <td>UpdatedAt</td>
+        
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        
+        <td>{{ .KnowledgeID }}</td>
+        
+        <td>{{ .Topic }}</td>
+        
+        <td>{{ .Content }}</td>
+        
+        <td>{{ .CreatedAt }}</td>
+        
+        <td>{{ .UpdatedAt }}</td>
+        
+        <td><a href="/showknowledgebase?id={{ .KnowledgeID }}" class="btn btn-primary">View</a></td>
+        <td><a href="/editknowledgebase?id={{ .KnowledgeID }}" class="btn btn-secondary">Edit</a></td>
+        <td><a href="/deleteknowledgebase?id={{ .KnowledgeID }}" class="btn btn-danger">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

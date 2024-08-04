@@ -1,0 +1,27 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>New entity fields</h2>  
+    <form method="POST" action="insertsystemsettings">
+       
+      
+     
+      <label>SettingKey </label><input type="text" name="SettingKey" /><br />
+      
+      
+     
+      <label>SettingValue </label><input type="text" name="SettingValue" /><br />
+      
+      
+      <label> CreatedAt </label><input type="datetime-local" name="CreatedAt" /><br />
+     
+      
+      
+      <label> UpdatedAt </label><input type="datetime-local" name="UpdatedAt" /><br />
+     
+      
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form>
+  {{ template "Footer" }}
+{{ end }}

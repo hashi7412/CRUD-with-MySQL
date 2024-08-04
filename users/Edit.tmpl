@@ -1,0 +1,71 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Edit Entity fields</h2>  
+    <form method="POST" action="updateusers">
+      <input type="hidden" name="uUserID" value="{{ .UserID }}" />
+        
+     
+     
+      <label>UserName </label><input type="text" name="UserName" value="{{ .UserName}}"  /><br />
+        
+     
+     
+      <label>UserEmail </label><input type="text" name="UserEmail" value="{{ .UserEmail}}"  /><br />
+        
+     
+     
+      <label>UserPassword </label><input type="text" name="UserPassword" value="{{ .UserPassword}}"  /><br />
+        
+     
+     
+      <label>UserRole </label><input type="text" name="UserRole" value="{{ .UserRole}}"  /><br />
+        
+     
+      <label> CreatedAt </label><input type="datetime-local" name="CreatedAt" value="{{ .CreatedAt}}"  /><br />
+     
+        
+     
+      <label> UpdatedAt </label><input type="datetime-local" name="UpdatedAt" value="{{ .UpdatedAt}}"  /><br />
+     
+        
+     
+     
+      <label>Name </label><input type="text" name="name" value="{{ .Name}}"  /><br />
+        
+     
+     
+      <label>Email </label><input type="text" name="email" value="{{ .Email}}"  /><br />
+        
+     
+     
+      <label>Username </label><input type="text" name="username" value="{{ .Username}}"  /><br />
+        
+     
+     
+      <label>Password </label><input type="text" name="password" value="{{ .Password}}"  /><br />
+        
+     
+     
+      <label>USER </label><input type="text" name="USER" value="{{ .USER}}"  /><br />
+        
+     
+     
+      <label>CURRENT_CONNECTIONS </label><input type="text" name="CURRENT_CONNECTIONS" value="{{ .CURRENT_CONNECTIONS}}"  /><br />
+        
+     
+     
+      <label>TOTAL_CONNECTIONS </label><input type="text" name="TOTAL_CONNECTIONS" value="{{ .TOTAL_CONNECTIONS}}"  /><br />
+        
+     
+     
+      <label>MAX_SESSION_CONTROLLED_MEMORY </label><input type="text" name="MAX_SESSION_CONTROLLED_MEMORY" value="{{ .MAX_SESSION_CONTROLLED_MEMORY}}"  /><br />
+        
+     
+     
+      <label>MAX_SESSION_TOTAL_MEMORY </label><input type="text" name="MAX_SESSION_TOTAL_MEMORY" value="{{ .MAX_SESSION_TOTAL_MEMORY}}"  /><br />
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

@@ -1,0 +1,20 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .AchievementID }} </h2>
+       
+     
+     <p>UserID: {{ .UserID }}</p>
+     
+     <p>AchievementTitle: {{ .AchievementTitle }}</p>
+     
+     <p>AchievementDetails: {{ .AchievementDetails }}</p>
+     
+     <p>AchievementDate: {{ .AchievementDate }}</p>
+     
+     <p>CreatedAt: {{ .CreatedAt }}</p>
+     
+    <br />
+      <p><a href="/editachievements?id={{ .AchievementID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

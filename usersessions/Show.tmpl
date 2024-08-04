@@ -1,0 +1,18 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .SessionID }} </h2>
+       
+     
+     <p>UserID: {{ .UserID }}</p>
+     
+     <p>SessionToken: {{ .SessionToken }}</p>
+     
+     <p>SessionStart: {{ .SessionStart }}</p>
+     
+     <p>SessionEnd: {{ .SessionEnd }}</p>
+     
+    <br />
+      <p><a href="/editusersessions?id={{ .SessionID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

@@ -1,0 +1,40 @@
+package main
+
+import (
+    "CRUD-WITH-MYSQL-MAIN/crud"
+    "log"
+    "net/http"
+
+    _ "github.com/go-sql-driver/mysql"
+    "github.com/spf13/viper"
+    _ "github.com/spf13/viper"
+)
+
+func main() {
+    viper.SetConfigFile("config.yaml")
+    viper.AddConfigPath(".")
+    viper.AutomaticEnv()
+
+    err := viper.ReadInConfig()
+
+    if err != nil {
+        panic(err.Error())
+    }
+
+    log.Println("Server started on PORT 8000")
+
+
+
+    zg-for(((zg-item:::[[[zg-entities]]]))){{{
+ http.HandleFunc("/[[[zg-item...zg-name]]]",crud.Index[[[zg-item...zg-name]]])
+ http.HandleFunc("/show[[[zg-item...zg-name]]]",crud.Show[[[zg-item...zg-name]]])
+ 
+ http.HandleFunc("/new[[[zg-item...zg-name]]]",crud.New[[[zg-item...zg-name]]])
+ http.HandleFunc("/edit[[[zg-item...zg-name]]]",crud.Edit[[[zg-item...zg-name]]])
+ http.HandleFunc("/insert[[[zg-item...zg-name]]]",crud.Insert[[[zg-item...zg-name]]])
+ http.HandleFunc("/update[[[zg-item...zg-name]]]",crud.Update[[[zg-item...zg-name]]])
+ http.HandleFunc("/delete[[[zg-item...zg-name]]]",crud.Delete[[[zg-item...zg-name]]])
+ }}}
+ http.ListenAndServe(":8080",nil)
+ }
+ 

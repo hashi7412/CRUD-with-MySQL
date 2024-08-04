@@ -1,0 +1,18 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .MessageID }} </h2>
+       
+     
+     <p>ConversationID: {{ .ConversationID }}</p>
+     
+     <p>Sender: {{ .Sender }}</p>
+     
+     <p>MessageText: {{ .MessageText }}</p>
+     
+     <p>MessageTimestamp: {{ .MessageTimestamp }}</p>
+     
+    <br />
+      <p><a href="/editmessages?id={{ .MessageID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

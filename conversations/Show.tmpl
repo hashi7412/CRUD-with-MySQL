@@ -1,0 +1,16 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .ConversationID }} </h2>
+       
+     
+     <p>UserID: {{ .UserID }}</p>
+     
+     <p>StartTime: {{ .StartTime }}</p>
+     
+     <p>EndTime: {{ .EndTime }}</p>
+     
+    <br />
+      <p><a href="/editconversations?id={{ .ConversationID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

@@ -1,0 +1,20 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .NoteID }} </h2>
+       
+     
+     <p>UserID: {{ .UserID }}</p>
+     
+     <p>NoteTitle: {{ .NoteTitle }}</p>
+     
+     <p>NoteContent: {{ .NoteContent }}</p>
+     
+     <p>CreatedAt: {{ .CreatedAt }}</p>
+     
+     <p>UpdatedAt: {{ .UpdatedAt }}</p>
+     
+    <br />
+      <p><a href="/editusernotes?id={{ .NoteID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

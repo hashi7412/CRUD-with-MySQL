@@ -1,0 +1,24 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .GoalID }} </h2>
+       
+     
+     <p>UserID: {{ .UserID }}</p>
+     
+     <p>GoalTitle: {{ .GoalTitle }}</p>
+     
+     <p>GoalDescription: {{ .GoalDescription }}</p>
+     
+     <p>GoalDeadline: {{ .GoalDeadline }}</p>
+     
+     <p>IsAchieved: {{ .IsAchieved }}</p>
+     
+     <p>CreatedAt: {{ .CreatedAt }}</p>
+     
+     <p>UpdatedAt: {{ .UpdatedAt }}</p>
+     
+    <br />
+      <p><a href="/editgoals?id={{ .GoalID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

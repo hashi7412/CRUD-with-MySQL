@@ -1,0 +1,18 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .ContextID }} </h2>
+       
+     
+     <p>ContextName: {{ .ContextName }}</p>
+     
+     <p>Description: {{ .Description }}</p>
+     
+     <p>CreatedAt: {{ .CreatedAt }}</p>
+     
+     <p>UpdatedAt: {{ .UpdatedAt }}</p>
+     
+    <br />
+      <p><a href="/editcontexts?id={{ .ContextID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

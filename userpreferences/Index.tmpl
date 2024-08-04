@@ -1,0 +1,51 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered userpreferences </h2>
+  
+    <table border="1">
+      <thead>
+      <tr>
+        
+        <td>PreferenceID</td>
+        
+        <td>UserID</td>
+        
+        <td>PreferenceKey</td>
+        
+        <td>PreferenceValue</td>
+        
+        <td>CreatedAt</td>
+        
+        <td>UpdatedAt</td>
+        
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        
+        <td>{{ .PreferenceID }}</td>
+        
+        <td>{{ .UserID }}</td>
+        
+        <td>{{ .PreferenceKey }}</td>
+        
+        <td>{{ .PreferenceValue }}</td>
+        
+        <td>{{ .CreatedAt }}</td>
+        
+        <td>{{ .UpdatedAt }}</td>
+        
+        <td><a href="/showuserpreferences?id={{ .PreferenceID }}" class="btn btn-primary">View</a></td>
+        <td><a href="/edituserpreferences?id={{ .PreferenceID }}" class="btn btn-secondary">Edit</a></td>
+        <td><a href="/deleteuserpreferences?id={{ .PreferenceID }}" class="btn btn-danger">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

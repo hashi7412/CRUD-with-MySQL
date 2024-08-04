@@ -1,0 +1,39 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Edit Entity fields</h2>  
+    <form method="POST" action="updategoals">
+      <input type="hidden" name="uGoalID" value="{{ .GoalID }}" />
+        
+     
+     
+      <label>UserID </label><input type="text" name="UserID" value="{{ .UserID}}"  /><br />
+        
+     
+     
+      <label>GoalTitle </label><input type="text" name="GoalTitle" value="{{ .GoalTitle}}"  /><br />
+        
+     
+     
+      <label>GoalDescription </label><input type="text" name="GoalDescription" value="{{ .GoalDescription}}"  /><br />
+        
+     
+      <label> GoalDeadline </label><input type="datetime-local" name="GoalDeadline" value="{{ .GoalDeadline}}"  /><br />
+     
+        
+     
+     
+      <label>IsAchieved </label><input type="text" name="IsAchieved" value="{{ .IsAchieved}}"  /><br />
+        
+     
+      <label> CreatedAt </label><input type="datetime-local" name="CreatedAt" value="{{ .CreatedAt}}"  /><br />
+     
+        
+     
+      <label> UpdatedAt </label><input type="datetime-local" name="UpdatedAt" value="{{ .UpdatedAt}}"  /><br />
+     
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

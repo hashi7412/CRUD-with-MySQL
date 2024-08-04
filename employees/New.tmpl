@@ -1,0 +1,19 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>New entity fields</h2>  
+    <form method="POST" action="insertemployees">
+       
+      
+     
+      <label>Name </label><input type="text" name="name" /><br />
+      
+      
+     
+      <label>City </label><input type="text" name="city" /><br />
+      
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form>
+  {{ template "Footer" }}
+{{ end }}

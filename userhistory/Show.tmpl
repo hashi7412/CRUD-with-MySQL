@@ -1,0 +1,16 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .HistoryID }} </h2>
+       
+     
+     <p>UserID: {{ .UserID }}</p>
+     
+     <p>HistoryData: {{ .HistoryData }}</p>
+     
+     <p>CreatedAt: {{ .CreatedAt }}</p>
+     
+    <br />
+      <p><a href="/edituserhistory?id={{ .HistoryID }}" class="btn btn-secondary">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}

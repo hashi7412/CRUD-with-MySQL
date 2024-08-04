@@ -1,0 +1,55 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered appointments </h2>
+  
+    <table border="1">
+      <thead>
+      <tr>
+        
+        <td>AppointmentID</td>
+        
+        <td>UserID</td>
+        
+        <td>AppointmentTitle</td>
+        
+        <td>AppointmentDetails</td>
+        
+        <td>AppointmentDate</td>
+        
+        <td>CreatedAt</td>
+        
+        <td>UpdatedAt</td>
+        
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        
+        <td>{{ .AppointmentID }}</td>
+        
+        <td>{{ .UserID }}</td>
+        
+        <td>{{ .AppointmentTitle }}</td>
+        
+        <td>{{ .AppointmentDetails }}</td>
+        
+        <td>{{ .AppointmentDate }}</td>
+        
+        <td>{{ .CreatedAt }}</td>
+        
+        <td>{{ .UpdatedAt }}</td>
+        
+        <td><a href="/showappointments?id={{ .AppointmentID }}" class="btn btn-primary">View</a></td>
+        <td><a href="/editappointments?id={{ .AppointmentID }}" class="btn btn-secondary">Edit</a></td>
+        <td><a href="/deleteappointments?id={{ .AppointmentID }}" class="btn btn-danger">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

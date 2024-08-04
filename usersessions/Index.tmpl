@@ -1,0 +1,47 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered usersessions </h2>
+  
+    <table border="1">
+      <thead>
+      <tr>
+        
+        <td>SessionID</td>
+        
+        <td>UserID</td>
+        
+        <td>SessionToken</td>
+        
+        <td>SessionStart</td>
+        
+        <td>SessionEnd</td>
+        
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        
+        <td>{{ .SessionID }}</td>
+        
+        <td>{{ .UserID }}</td>
+        
+        <td>{{ .SessionToken }}</td>
+        
+        <td>{{ .SessionStart }}</td>
+        
+        <td>{{ .SessionEnd }}</td>
+        
+        <td><a href="/showusersessions?id={{ .SessionID }}" class="btn btn-primary">View</a></td>
+        <td><a href="/editusersessions?id={{ .SessionID }}" class="btn btn-secondary">Edit</a></td>
+        <td><a href="/deleteusersessions?id={{ .SessionID }}" class="btn btn-danger">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

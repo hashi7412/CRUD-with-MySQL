@@ -1,0 +1,27 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Edit Entity fields</h2>  
+    <form method="POST" action="updateuserskills">
+      <input type="hidden" name="uUserSkillID" value="{{ .UserSkillID }}" />
+        
+     
+     
+      <label>UserID </label><input type="text" name="UserID" value="{{ .UserID}}"  /><br />
+        
+     
+     
+      <label>SkillID </label><input type="text" name="SkillID" value="{{ .SkillID}}"  /><br />
+        
+     
+     
+      <label>ProficiencyLevel </label><input type="text" name="ProficiencyLevel" value="{{ .ProficiencyLevel}}"  /><br />
+        
+     
+      <label> CreatedAt </label><input type="datetime-local" name="CreatedAt" value="{{ .CreatedAt}}"  /><br />
+     
+      
+      <input type="submit" value="Save user" class="btn btn-secondary" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

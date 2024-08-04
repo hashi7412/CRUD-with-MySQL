@@ -1,0 +1,47 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered userskills </h2>
+  
+    <table border="1">
+      <thead>
+      <tr>
+        
+        <td>UserSkillID</td>
+        
+        <td>UserID</td>
+        
+        <td>SkillID</td>
+        
+        <td>ProficiencyLevel</td>
+        
+        <td>CreatedAt</td>
+        
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        
+        <td>{{ .UserSkillID }}</td>
+        
+        <td>{{ .UserID }}</td>
+        
+        <td>{{ .SkillID }}</td>
+        
+        <td>{{ .ProficiencyLevel }}</td>
+        
+        <td>{{ .CreatedAt }}</td>
+        
+        <td><a href="/showuserskills?id={{ .UserSkillID }}" class="btn btn-primary">View</a></td>
+        <td><a href="/edituserskills?id={{ .UserSkillID }}" class="btn btn-secondary">Edit</a></td>
+        <td><a href="/deleteuserskills?id={{ .UserSkillID }}" class="btn btn-danger">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}
